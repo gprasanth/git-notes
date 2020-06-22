@@ -13,6 +13,7 @@ function new_note() {
     vi "$ts.$NOTES_FMT"
     g add "$ts.$NOTES_FMT"
     g commit -m "Created $ts.$NOTES_FMT"
+    g push
     cd "$prev_dir"
 }
 alias nn="new_note"
@@ -24,6 +25,7 @@ function last_note() {
     vi "$l"
     g add "$l"
     g commit -m "Edited $(basename $l)"
+    g push
     cd "$prev_dir"
 }
 alias n="last_note"
